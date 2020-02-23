@@ -117,7 +117,7 @@ class PartnerListAPIViewTestCase(APITestCase):
                                     document=cnpj1,
                                     coverage_area=coverage_area1,
                                     address=address1)
-
+        
         data2 = {
             "trading_name": "Adega Emporio",
             "owner_name": "Eduardo Piroco",
@@ -146,14 +146,9 @@ class PartnerListAPIViewTestCase(APITestCase):
                                     address=address2)
 
 
-    def test_list_pokemon(self):
+    def test_list_partner(self):
         partners_list_url = reverse('partners_list')
         response = self.client.get(partners_list_url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(2, response.data.get('count'))
-
-    def test_filter_pokemon_by_id(self):
-        partner_detail_url = reverse('partner_detail', kwargs={'partner_id': 1})
-        response = self.client.get(partner_detail_url)
-        self.assertEqual(200, response.status_code)
 
