@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "delivery"
+version = "0.1.0"
+description = ""
+authors = ["Felipe Carvalho <felipe.carvalho07@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^3.2.6"
+djangorestframework = "^3.12.4"
+prettyconf = "^2.2.1"
+django-cors-headers = "^3.7.0"
+drf-yasg = "^1.20.0"
+psycopg2 = "^2.9.1"
+geojson = "^2.5.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+black = "^21.7b0"
+pytest = "^6.2.4"
+pytest-cov = "^2.12.1"
+pytest-django = "^4.4.0"
+drf-yasg = "^1.20.0"
+isort = "^5.9.3"
+freezegun = "^1.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 services:
   postgis:
     image: geographica/postgis:dev_diplodocus
@@ -8,14 +8,18 @@ services:
       - db-data:/data
     environment:
       - POSTGRES_PASSWD=postgres
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
+  api:
+    build:
+      context: .
+    command: local
+    env_file:
+      - ././server/.env
     volumes:
-      - .:/code
+      - db-data:/data
     ports:
       - "8000:8000"
     depends_on:
       - postgis
+
 volumes:
   db-data:
